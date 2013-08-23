@@ -21,7 +21,7 @@ def count_vowels(str):
     char_counts = Counter(str)
     vowels = {key: char_counts[key]
               for key in char_counts.keys() if key in 'aoeuiy'}
-    return vowels          
+    return vowels
 
 
 def test_count_vowels():
@@ -36,8 +36,13 @@ def test_count_vowels():
     assert count_vowels('djkstr rllz') == {}
 
 if __name__ == '__main__':
+    '''
+    usage (unix): $ python3 count_vowels.py
+    ctrl-D for EOF-signal
+    or 
+    python3 count_vowels.py < filename
+    '''
     # import doctest
     # doctest.testmod()
-    #print(count_vowels(input()))
     data = sys.stdin.readlines()
     print(count_vowels(''.join(data)))
