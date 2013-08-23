@@ -19,8 +19,8 @@ def count_vowels(str):
     {}
     """
     char_counts = Counter(str)
-    vowels = {key: char_counts[key]
-              for key in char_counts.keys() if key in 'aoeuiy'}
+    vowels = {key: value for key,
+              value in char_counts.items() if key in 'aoeuiy'}
     return vowels
 
 
